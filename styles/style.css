@@ -65,11 +65,10 @@ fieldset {
   margin: auto;
   align-self: center;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 2fr 1fr;
   align-items: end;
   grid-column-gap: 30px;
   border: inherit 1px solid;
-  box-sizing: border-box;
 }
 
 .visually-hidden {
@@ -82,12 +81,8 @@ fieldset {
   white-space: nowrap;
 } 
 
-.custom-scrollbar {
-  scrollbar-width: thin;
-}
-
 .content__list{
-  gap: 20px;
+  gap: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -95,7 +90,6 @@ fieldset {
 .result {
   display: grid;
   grid-template-rows: 1fr auto;
-  grid-row-gap: 16px;
 }
 
 .search-form {
@@ -116,7 +110,7 @@ fieldset {
   font-family: Oswald;
   font-weight: 700;
   font-size: 75px;
-  line-height: 70.5px;
+  line-height: 70px;
   letter-spacing: 0px;
   text-transform: uppercase;
   max-width: fit-content;
@@ -140,7 +134,7 @@ fieldset {
 }
 
 .content__list-container {
-  overflow-y: auto;
+  overflow: auto;
   object-fit: contain;
   max-height: 298px;
   position: relative;
@@ -157,8 +151,6 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  overflow: visible;
-  outline: none;
 }
 
 .content__video-card-title {
@@ -170,8 +162,8 @@ fieldset {
   letter-spacing: 0px;
   text-transform: uppercase;
   color: #fff;
-  overflow: clip visible;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -179,23 +171,20 @@ fieldset {
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   color: #fff;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   line-clamp: 4;
-  overflow: hidden visible; 
+  overflow: hidden hidden;
   text-overflow: ellipsis;
+  
 }
 
 .result__video {
-  position: relative;
-  display: block;
-  height: 386px;
-  max-width: 711px;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -347,16 +336,23 @@ fieldset {
   outline: none;
 }
 
-.content__card-link:focus{
+.content__list-item:focus{
   outline: #fff 1px solid;
   text-decoration: none;
   overflow: visible;
 }
 
-.content__card-link:active{
+.content__list-item:active{
   outline: none;
 }
 
 .result__video-container {
   position: relative;
+  inline-size: 711px;
+  block-size: 386px;
+  margin-block-end: 16px;
+}
+
+.content__card-link_current > .content__video-card{
+  background-color: #545050;
 }
